@@ -1,0 +1,11 @@
+node_modules
+.git
+.gitignore
+README.md
+NOTES.md
+*.log
+.env
+.env.local
+.env.*.local
+src/data/source_docs
+src/scripts 
