@@ -8,4 +8,6 @@ NOTES.md
 .env.local
 .env.*.local
 src/data/source_docs
-src/scripts 
+src/scripts
+# Keep documents.json for RAG system
+!src/data/documents.json 
