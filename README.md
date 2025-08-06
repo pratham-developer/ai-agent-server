@@ -2,6 +2,25 @@
 
 A backend AI agent server with RAG (Retrieval-Augmented Generation), memory, and plugin support.
 
+## 🚀 Live Deployment
+
+**Production URL**: https://ai-agent-server-xr4p.onrender.com
+
+### Test the Live Deployment
+
+```bash
+# Health check
+curl https://ai-agent-server-xr4p.onrender.com/health
+
+# Send a message to the agent
+curl -X POST https://ai-agent-server-xr4p.onrender.com/agent/message \
+  -H "Content-Type: application/json" \
+  -d '{
+    "session_id": "test123",
+    "message": "What is 2 + 2?"
+  }'
+```
+
 ## Features
 
 - **RAG System**: Semantic search through document chunks using embeddings
@@ -76,6 +95,15 @@ Handles mathematical calculations using mathjs for security.
 - **Build**: `npm run build`
 - **Dev mode**: `npm run dev`
 - **Generate embeddings**: `npm run build:docs`
+
+## Deployment
+
+This project is deployed on **Render** with automatic deployments from GitHub.
+
+- **Platform**: Render
+- **URL**: https://ai-agent-server-xr4p.onrender.com
+- **Auto-deploy**: Enabled (deploys on every git push)
+- **Health Check**: `/health` endpoint
 
 ## Dependencies
 
