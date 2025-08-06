@@ -14,17 +14,15 @@ app.use(express.urlencoded({extended:false}));
 
 app.use('/', agentRouter);
 
-// Health check endpoint for Vercel
+// Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'AI Agent Server is running' });
 });
 
-// Only start the server if we're not in a serverless environment
-if (process.env.NODE_ENV !== 'production' || process.env.VERCEL !== '1') {
-  app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
-}
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
-// Export for Vercel serverless
+// Export for potential serverless environments
 export default app;
